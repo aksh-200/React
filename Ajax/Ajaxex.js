@@ -18,15 +18,17 @@ let [strobj ,stringobj] = useState()
         
     return(
       <>
-      <p>{element.id}</p>
+     
       <tr>
-       <td>
+       {/* <td>
          {element.first_name}
        </td>
-       <td>{element.last_name}</td>
+       <td>{element.last_name}</td> 
+     <button type="button" class="btn btn-primary"  onClick={handler}>ok</button>
+       */}
 
        <td><img src={element.avatar}></img></td>
-        <td><button value={element.id} onClick={getinfo}> Ok</button></td>
+        <td><button  type="button" class="btn btn-primary" value={element.id} onClick={getinfo}> VIEW </button></td>
       </tr>
       </>
       )
@@ -54,7 +56,7 @@ function getinfo(event)
         
     return(
       <>
-      <p>{element.id}</p>
+      {/* <p>{element.id}</p>
       <tr>
        <td>
          {element.first_name}
@@ -63,7 +65,18 @@ function getinfo(event)
 
        <td><img src={element.avatar}></img></td>
         <td><button value={element.id} > Ok</button></td>
-      </tr>
+      </tr> */}
+
+
+<div class="col-sm-6" style={{}}>
+      <h1>{element.first_name}</h1>
+      <h2>{element.last_name}</h2>
+    </div>
+ <div class="col-sm-6" style={{}}>
+    <img src={element.avatar}></img>
+    </div>
+
+      
       </>
       )
     })
@@ -93,25 +106,32 @@ function getinfo(event)
     return(
 
      <>
-     <button  onClick={handler}>ok</button>
-     <table>
+     <button type="button" class="btn btn-primary"  onClick={handler}>ok</button>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 ">
+
+     <div class="shadow p-3 mb-5 bg-white rounded">
+    <table >
      <tbody>
        {rows()}
      </tbody>
         
      </table>
-
-     <hr></hr>
-     
-    <table>
-<tbody>
+     </div> 
+    
+    </div>
+    <div class="col-sm-6" style={{border:"3px solid red" , padding:"50px" }}>
+ 
     {objfun()}
-</tbody>
 
-    </table>
-    
+    </div>
    
-    
+  </div>
+</div>  
+     
+     
      </>
     )
 }
